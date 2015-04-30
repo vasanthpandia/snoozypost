@@ -1,4 +1,4 @@
 <%= provide(:title, @user.name) %>
 <p><%= @user.name %> </p>
 <p><%= @user.email %></p>
-<%= button_to "Facebook Login", { :controller => "users_controller", :action => "fbauth"} %>
+<%= link_to 'Login', Koala::Facebook::OAuth.new.url_for_oauth_code(:callback => fbauth_user_url) %>

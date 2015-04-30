@@ -15,8 +15,10 @@ class UsersController < ApplicationController
 		end
 	end
 	def fbauth
-		@oauth = Koala::Facebook::OAuth.new(APP_CONFIG['app_id'],APP_CONFIG['secret_key'],APP_CONFIG['redirect_url'])
-		puts @oauth.inspect
+		@oauth_token ||= Koala::Facebook::OAuth.new(fbauth_user_url).get_access_token(params[:code]) if params[:code]
+		Rails.logger.debug "*"*50
+		Rails.logger.debug @oauth_token.inspect
+		Rails.logger.debug "*"*50
 	end
 	def show
 		@user = User.find(params[:id])

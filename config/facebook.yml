@@ -1,4 +1,3 @@
 development:
   app_id: 1573822299559723
   secret_key: 9934c6df1f735f2bdd82b2c91d6eb85f
-  redirect_url: http://localhost:3000
