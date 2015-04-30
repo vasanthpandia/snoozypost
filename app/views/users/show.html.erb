@@ -1,3 +1,4 @@
 <%= provide(:title, @user.name) %>
 <p><%= @user.name %> </p>
 <p><%= @user.email %></p>
+<%= button_to "Facebook Login", { :controller => "users_controller", :action => "fbauth"} %>

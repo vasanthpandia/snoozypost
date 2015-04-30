@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
 	def index
 		@user.all
 	end
@@ -12,6 +13,10 @@ class UsersController < ApplicationController
 		else
 			flash[:notice] = "User ceated successfully"
 		end
+	end
+	def fbauth
+		@oauth = Koala::Facebook::OAuth.new(APP_CONFIG['app_id'],APP_CONFIG['secret_key'],APP_CONFIG['redirect_url'])
+		puts @oauth.inspect
 	end
 	def show
 		@user = User.find(params[:id])
