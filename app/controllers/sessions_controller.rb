@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     user=env["warden"].authenticate
     if user 
       puts user.inspect
-      redirect_to user
+      redirect_to root_path
      else
       flash.now.alert = env["warden"].message
       render 'new'

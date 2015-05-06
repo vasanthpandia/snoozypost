@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150428161213) do
+ActiveRecord::Schema.define(version: 20150504161503) do
+
+  create_table "installed_apps", force: :cascade do |t|
+    t.integer  "user_id",      limit: 4
+    t.string   "provider",     limit: 255
+    t.string   "access_token", limit: 255
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "uid",          limit: 8
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name",            limit: 255
