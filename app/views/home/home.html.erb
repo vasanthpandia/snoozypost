@@ -6,12 +6,15 @@
 <% if !current_user.installed_apps.empty? %>
 <% fbapp = Koala::Facebook::API.new(current_user.installed_apps.first.access_token) %>
 <% s = OpenStruct.new(fbapp.get_object('me')) %>
-<% Rails.logger.debug s %>
 <p><a href = https://www.facebook.com/app_scoped_user_id/10206572390010656><%= s.name %></a></p>
-<%= form_for @post, :url => '/post', :html => {:method => :post} do |f| %>
-<%= f.label :content %>
-<%= f.text_area :content %>
-<%= f.submit %>
+<%= form_tag('/post') do %>
+<%= label_tag :content %>
+<% current_user.installed_apps.each do |ob| %>
+<%= label_tag ob.id.to_s %>
+<%= check_box_tag 'installed_app_id[]', ob.id %>
+<% end %>
+<%= text_area_tag :content %>
+<%= submit_tag %>
 <% end %>
 <% end %>
 <% else %>

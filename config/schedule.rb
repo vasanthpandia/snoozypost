@@ -19,5 +19,5 @@
 
 # Learn more: http://github.com/javan/whenever
 every 1.minutes do
-	rake 'post:facebook'
+	rake 'post:facebook', :environment => 'development'
 end
