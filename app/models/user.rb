@@ -4,4 +4,5 @@ class User < ActiveRecord::Base
 	validates_presence_of :email
 	has_secure_password
 	has_many :installed_apps
+	has_many :posts
 end

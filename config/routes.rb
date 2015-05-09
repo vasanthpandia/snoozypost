@@ -20,6 +20,7 @@ Rails.application.routes.draw do
       get 'home'
     end
   end
+  resources :post
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
