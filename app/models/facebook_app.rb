@@ -1,0 +1,2 @@
+class FacebookApp < InstalledApp
+end

@@ -1,0 +1,2 @@
+class TwitterApp < InstalledApp
+end
