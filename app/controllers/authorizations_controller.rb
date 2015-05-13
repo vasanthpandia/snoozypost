@@ -16,4 +16,7 @@ class AuthorizationsController < ApplicationController
 			redirect_to user_path
 		end
 	end
+	def twitterauth
+		raise env['omniauth.auth'].to_yaml
+	end
 end

@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   #   resources :products
   root 'home#home'
   match '/home',    to: 'home#home',    via: 'get'
+  match '/auth/twitter/callback', to: 'authorizations#twitterauth', via: 'get'
   resources :home do 
     member do
       get 'home'
@@ -27,6 +28,7 @@ Rails.application.routes.draw do
 resources :authorizations do
   member do
     get 'fbauth'
+    get 'twitterauth'
   end
 end
 resources :sessions

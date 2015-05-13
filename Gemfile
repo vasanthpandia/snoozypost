@@ -16,6 +16,8 @@ gem "bcrypt"
 gem "warden"
 gem 'koala'
 gem 'resque'
+gem 'omniauth-twitter'
+gem 'twitter'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 gem 'whenever', :require => false
