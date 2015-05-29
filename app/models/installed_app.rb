@@ -5,11 +5,5 @@ class InstalledApp < ActiveRecord::Base
 
     # We will need a way to know which animals
     # will subclass the Animal model
-    def self.provider
-      %w(Facebook Twitter)
-    end
 
 end
-
-class Facebook < InstalledApp ; end
-class Twitter < InstalledApp ; end

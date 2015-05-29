@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
 	has_secure_password
 	has_many :installed_apps
 	has_many :posts
+	delegate :facebook_apps, :twitter_apps, to: :installed_apps 
 end
