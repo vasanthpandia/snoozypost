@@ -3,10 +3,10 @@
 <%= current_user.name %>
 <%= current_user.email %>
 <%= link_to 'Logout',  logout_path, method: :delete %>
-<% if !current_user.installed_apps.empty? %>
-<% fbapp = Koala::Facebook::API.new(current_user.installed_apps.first.access_token) %>
+<% if !current_user.facebook_app.empty? %>
+<% fbapp = Koala::Facebook::API.new(current_user.facebook_app.first.access_token) %>
 <% s = OpenStruct.new(fbapp.get_object('me')) %>
-<p><a href = https://www.facebook.com/app_scoped_user_id/10206572390010656><%= s.name %></a></p>
+<!-- <p><a href = https://www.facebook.com/app_scoped_user_id/#{current_user.facebook_app.uid}><%= s.name %></a></p> -->
 <%= form_tag('/post') do %>
 <%= label_tag :content %>
 <% current_user.installed_apps.each do |ob| %>
