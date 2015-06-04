@@ -9,7 +9,6 @@ class AuthorizationsController < ApplicationController
 		Rails.logger.debug "*"*50
 		current_user.installed_apps << FacebookApp.new(access_token: @access_token, uid: @uid)
 		redirect_to root_path
-		
 	end
 	def twitterauth
 		# raise env['omniauth.auth'].to_yaml
