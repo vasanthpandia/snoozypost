@@ -8,7 +8,7 @@ namespace :post do
     Socialpost.where("status = false").find_each(batch_size: 50) do |sp|
 		fbapp = Koala::Facebook::API.new(sp.installed_app.access_token)
 		fbapp.put_connections("me", "feed", :message => sp.post.content)
-		sp.status = true 
+		sp.mark_as_posted!
 		sp.save
     end
   end
