@@ -7,8 +7,33 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+<header class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container">
+      <%= link_to "MySpace", root_path, id: "logo" %>
+      <nav>
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Home",   home_path %></li>
+            <% if signed_in? %>
+              <li><%= link_to 'My Profile',  user_path(current_user.id)  %></li>
+              <li><%= link_to 'Logout',  logout_path, method: :delete %></li>
+            <% else %>
+              <li><%= link_to 'Login',  login_path %></li>
+              <li><%= link_to "Register", new_user_path %></li>
+            <% end %>
+        </ul>
+      </nav>
+    </div>
+</header>
+  <div class="container">
+    <% flash.each do |name, msg| %>
+    <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+      <a class="close" data-dismiss="alert">x</a>
+      <%= msg %>
+    </div>
+    <% end %>
+  </div>
+  <div class="container">
+    <%= yield %>
+  </div>
 </body>
 </html>

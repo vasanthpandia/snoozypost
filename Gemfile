@@ -5,9 +5,9 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.1'
 # Use sqlite3 as the database for Active Record
 gem 'mysql2'
+gem 'rename'
 # Use SCSS for stylesheets
-gem 'twitter-bootstrap-rails'
-gem 'sass-rails', '~> 5.0'
+gem 'bootstrap-sass'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -44,6 +44,7 @@ group :development, :test do
   gem 'better_errors'
   gem 'sextant'
   gem 'binding_of_caller'
+  gem 'byebug'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
