@@ -5,23 +5,22 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: mysql2
+  adapter: postgresql
   pool: 5
   timeout: 5000
-  username: root
   host: 127.0.0.1
 
 development:
   <<: *default
-  database: myspace
+  database: snoozypost
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: myspace
+  database: snoozypost
 
 production:
   <<: *default
-  database: myspace
+  database: snoozypost
