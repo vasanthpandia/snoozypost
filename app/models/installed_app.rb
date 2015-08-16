@@ -3,8 +3,6 @@ class InstalledApp < ActiveRecord::Base
 	has_many :socialposts
 	self.inheritance_column = :provider 
 
-	validates_uniqueness_of :uid
-
     # We will need a way to know which animals
     # will subclass the Animal model
      def self.provider

@@ -1,24 +1,15 @@
 <%= provide(:title, "New User") %>
-<div class="row">
-<div class="col-md-3">
-</div>
-<div class="col-md-6">
-<div class="jumbotron">
 <%= form_for(@user) do |f| %>
 	<%= f.label :name %>
     <%= f.text_field :name %>
-<br/>
+
     <%= f.label :email %>
     <%= f.email_field :email %>
-<br/>
+
     <%= f.label :password %>
     <%= f.password_field :password %>
-<br/>
+
     <%= f.label :password_confirmation, "Confirmation" %>
     <%= f.password_field :password_confirmation %>
-    <br/>
     <%= f.submit %>
-<br/>
 <% end %>
-</div>
-</div>
