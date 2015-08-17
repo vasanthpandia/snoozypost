@@ -7,7 +7,6 @@ gem 'rails', '4.2.1'
 gem 'foreman'
 gem 'puma'
 gem 'pg'
-gem 'mysql2'
 gem 'rename'
 # Use SCSS for stylesheets
 gem 'bootstrap-sass'
