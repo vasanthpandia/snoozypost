@@ -104,7 +104,6 @@ GEM
     mono_logger (1.1.0)
     multi_json (1.11.0)
     multipart-post (2.0.0)
-    mysql2 (0.3.18)
     naught (1.0.0)
     newrelic_rpm (3.13.0.299)
     nokogiri (1.6.6.2)
@@ -229,7 +228,6 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   koala
-  mysql2
   newrelic_rpm
   omniauth-twitter
   pg
