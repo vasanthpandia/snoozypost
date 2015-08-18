@@ -21,6 +21,7 @@ gem 'resque'
 gem 'omniauth-twitter'
 gem 'twitter'
 gem 'newrelic_rpm'
+gem 'rails_12factor'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 gem 'whenever', :require => false
