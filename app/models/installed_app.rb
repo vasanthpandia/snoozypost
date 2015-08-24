@@ -1,7 +1,7 @@
 class InstalledApp < ActiveRecord::Base
 	self.inheritance_column = :provider 
 
-  belongs_to :user , :foreign_key =>'user_id'
+  belongs_to :user
 
   has_many :socialposts
 

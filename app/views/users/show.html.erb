@@ -1,6 +1,6 @@
 <%= provide(:title, @user.name) %>
 <p><%= @user.name %> </p>
 <p><%= @user.email %></p>
-<%= link_to 'Add Facebbok', Koala::Facebook::OAuth.new.url_for_oauth_code({:callback =>  fbauth_authorization_url , :permissions => ["manage_pages", "user_posts", "user_relationships", "user_status", "user_tagged_places", "read_custom_friendlists", "publish_actions"]}) %>
+<%= link_to 'Add Facebook', Koala::Facebook::OAuth.new.url_for_oauth_code({:callback =>  fbauth_authorization_url , :permissions => ["manage_pages", "user_posts", "user_relationships", "user_status", "user_tagged_places", "read_custom_friendlists", "publish_actions"]}) %>
 <%= link_to 'Add Twitter', "/auth/twitter" %>
 
