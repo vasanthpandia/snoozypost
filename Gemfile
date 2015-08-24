@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 # Stack
 gem 'rails', '4.2.1'
+gem 'foreman'
+gem 'puma'
 gem 'pg'
 gem 'rename'
 
