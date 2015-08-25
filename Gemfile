@@ -24,6 +24,10 @@ gem 'turbolinks'
 gem 'koala'
 gem 'twitter'
 
+# Uploads
+gem 'carrierwave'
+gem 'fog'
+
 # Monitoring
 gem 'newrelic_rpm'
 

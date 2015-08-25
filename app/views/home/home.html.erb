@@ -7,13 +7,14 @@
 <% fbapp = Koala::Facebook::API.new(current_user.facebook_app.first.access_token) %>
 <% s = OpenStruct.new(fbapp.get_object('me')) %>
 <!-- <p><a href = https://www.facebook.com/app_scoped_user_id/#{current_user.facebook_app.uid}><%= s.name %></a></p> -->
-<%= form_tag('/post') do %>
+<%= form_tag('/post', multipart: true) do %>
 <%= label_tag :content %>
 <% current_user.installed_apps.each do |ob| %>
 <%= label_tag ob.id.to_s %>
 <%= check_box_tag 'installed_app_id[]', ob.id %>
 <% end %>
 <%= text_area_tag :content %>
+<%= file_field_tag :post_image, :accept => 'image/jpeg/png' %>
 <%= submit_tag %>
 <% end %>
 <% end %>
