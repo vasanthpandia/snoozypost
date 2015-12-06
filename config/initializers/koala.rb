@@ -4,8 +4,8 @@
 require 'yaml'
 module Facebook
   # CONFIG = YAML.load_file(Rails.root.join("config/facebook.yml"))[Rails.env]
-  APP_ID = ENV['FACEBOOK_APP_ID']
-  SECRET = ENV['FACEBOOK_SECRET_KEY']
+  APP_ID = '1573822299559723'
+  SECRET = '9934c6df1f735f2bdd82b2c91d6eb85f'
 end
 
 Koala::Facebook::OAuth.class_eval do
