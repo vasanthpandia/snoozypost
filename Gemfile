@@ -8,8 +8,7 @@ gem 'pg'
 gem 'rename'
 
 # Authentication
-gem "bcrypt"
-gem "warden"
+gem 'devise'
 gem 'omniauth-twitter'
 
 # View
