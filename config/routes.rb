@@ -1,41 +1,27 @@
 Rails.application.routes.draw do
-  devise_for :users
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+  devise_for :users, controllers: { registration: 'users/registrations', sessions: 'users/sessions' }
 
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
-
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
-
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
-
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
   root 'home#home'
+
   match '/home',    to: 'home#index',    via: 'get'
-  match '/signup', to: 'users#new', via: 'get'
+
   match '/auth/twitter/callback', to: 'authorizations#twitterauth', via: 'get'
-  resources :home do 
+
+  resources :post
+
+  resources :home do
     member do
       get 'home'
       get 'index'
     end
   end
-  resources :post
-  get    'login'   => 'sessions#new'
-  post   'login'   => 'sessions#create'
-  delete 'logout'  => 'sessions#destroy'
-resources :authorizations do
-  member do
-    get 'fbauth'
-    get 'twitterauth'
+
+  resources :authorizations do
+    member do
+      get 'fbauth'
+      get 'twitterauth'
+    end
   end
-end
-resources :sessions
-resources :users
 
   # Example resource route with options:
   #   resources :products do

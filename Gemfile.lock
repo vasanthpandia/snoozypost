@@ -297,6 +297,9 @@ GEM
       rdoc (~> 4.0)
     sextant (0.2.4)
       rails (>= 3.2)
+    simple_form (3.2.0)
+      actionpack (~> 4.0)
+      activemodel (~> 4.0)
     simple_oauth (0.3.1)
     sinatra (1.4.6)
       rack (~> 1.4)
@@ -366,6 +369,7 @@ DEPENDENCIES
   resque
   sdoc (~> 0.4.0)
   sextant
+  simple_form
   spring
   turbolinks
   twitter

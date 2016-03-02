@@ -2,7 +2,7 @@
 <% if current_user %>
 <%= current_user.name %>
 <%= current_user.email %>
-<%= link_to 'Logout',  logout_path, method: :delete %>
+<%= link_to 'Logout',  destroy_user_session_path, method: :delete %>
 <% if !current_user.facebook_app.empty? %>
 <% fbapp = Koala::Facebook::API.new(current_user.facebook_app.first.access_token) %>
 <% s = OpenStruct.new(fbapp.get_object('me')) %>
