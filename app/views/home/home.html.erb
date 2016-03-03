@@ -1,6 +1,6 @@
 <%= provide(:title, "Myspace : Home") %>
 <% if current_user %>
-<%= current_user.name %>
+<%= current_user.full_name %>
 <%= current_user.email %>
 <%= link_to 'Logout',  destroy_user_session_path, method: :delete %>
 <% if !current_user.facebook_app.empty? %>

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { registration: 'users/registrations', sessions: 'users/sessions' }
+  devise_for :users, controllers: { registrations: 'users/registrations', sessions: 'users/sessions', passwords: 'users/passwords' }
 
   root 'home#home'
 
@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   match '/auth/twitter/callback', to: 'authorizations#twitterauth', via: 'get'
 
   resources :post
+
+  resources :profile, only: [:show, :edit, :update]
 
   resources :home do
     member do
