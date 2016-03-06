@@ -1,6 +1,6 @@
 class ProfileController < ApplicationController
   before_filter :ensure_signed_in, only: [:edit, :update]
-  before_filter :get_user, only: [:show, :edit]
+  before_filter :get_user
 
   def show
     @user
@@ -17,6 +17,6 @@ class ProfileController < ApplicationController
   private
 
   def get_user
-    @user ||= User.find(params[:id])
+    @user ||= current_user
   end
 end

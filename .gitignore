@@ -16,4 +16,6 @@
 !/log/.keep
 /tmp
 postlog
+/config/secrets.yml
+.env
 */.DS_Store

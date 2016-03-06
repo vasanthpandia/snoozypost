@@ -1,7 +1,0 @@
-development:
-  api_key: JI6S08yaB0NlaKkWjeV3KAejm
-  secret: hq8VmDsB7l8b1bWAUcFaozzdErtB8JXcrJIqDhAIQt6JBaSOs9
-
-production:
-  api_key: ENV['TWITTER_APP_KEY']
-  secret: ENV['TWITTER_APP_SECRET']

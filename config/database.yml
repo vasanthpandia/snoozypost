@@ -3,7 +3,7 @@ base: &base
   encoding: utf8
   username:
   password:
-  host: 127.0.0.1
+  host: localhost
   pool: 5
 
 development:
