@@ -1,7 +1,6 @@
 namespace :post do
   desc "TODO"
   task facebook: :environment do
-    # File.open("postlog", 'a') {|f| f.write("#{Time.now} \n") }
     Socialpost.where(posted_at: nil).find_each do |sp|
       if sp.app_type == 'FacebookApp'
         puts "Inside Facebook App Socialpost"

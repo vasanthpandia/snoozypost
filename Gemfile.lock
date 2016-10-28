@@ -2,6 +2,9 @@ GEM
   remote: https://rubygems.org/
   specs:
     CFPropertyList (2.3.1)
+    action_parameter (0.0.3)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     actionmailer (4.2.1)
       actionpack (= 4.2.1)
       actionview (= 4.2.1)
@@ -347,6 +350,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  action_parameter
   better_errors
   binding_of_caller
   bootstrap-sass

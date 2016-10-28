@@ -1,0 +1,13 @@
+<%= provide(:title, 'Posts') %>
+<table>
+<th>
+<td>Post Id</td>
+<td>Content</td>
+</th>
+<tr>
+<% @posts.each do |post| %>
+<td><%= post.id %></td>
+<td><%= post.content %></td>
+</tr>
+</table>
+<% end %>

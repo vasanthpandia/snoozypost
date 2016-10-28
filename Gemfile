@@ -11,6 +11,9 @@ gem 'rename'
 gem 'devise'
 gem 'omniauth-twitter'
 
+# Model
+gem 'action_parameter'
+
 # View
 gem 'bootstrap-sass'
 gem 'uglifier', '>= 1.3.0'

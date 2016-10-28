@@ -3,5 +3,9 @@ class Post < ActiveRecord::Base
 
   has_many :socialposts
 
-  mount_uploader :image, PostImageUploader
+  # mount_uploader :image, PostImageUploader
+
+  accepts_nested_attributes_for :socialposts
+
+  validates :content, presence: true
 end

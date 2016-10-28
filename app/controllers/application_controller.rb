@@ -4,6 +4,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def ensure_signed_in
-    status = signed_in? ? true : false
+    if !signed_in?
+      flash[:alert] = "You must be logged in to view this page"
+      redirect_to new_user_session_path if !signed_in?
+    end
   end
 end
