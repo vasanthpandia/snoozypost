@@ -1,0 +1,36 @@
+doctype html
+html
+  head
+    title
+      | SnoozyPost
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  body
+    header.navbar.navbar-fixed-top.navbar-inverse
+      .container
+        = link_to "SnoozyPost", root_path, id: "logo"
+        nav
+          ul.nav.navbar-nav.navbar-right
+            li
+              = link_to "Home",   home_path
+            - if signed_in?
+              li
+                = link_to 'My Profile',  profile_path(current_user)
+              li
+                = link_to 'Logout',  destroy_user_session_path, method: :delete
+            - else
+              li
+                = link_to 'Login',  new_user_session_path
+              li
+                = link_to "Register", new_user_registration_path
+    .container
+      - flash.each do |name, msg|
+        |  <div class="alert alert-
+        = name == :notice ? "success" : "error"
+        | ">
+        a.close[data-dismiss="alert"]
+          | x
+        = msg
+    .container
+      = yield
